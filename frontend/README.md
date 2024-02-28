@@ -1,1 +1,1 @@
-=> here we gonna list the technologies we have worked with in the frontend
+=> here we gonna list the technologies we have worked with in the frontend from my branch
