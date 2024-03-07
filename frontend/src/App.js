@@ -1,17 +1,12 @@
 import React from 'react';
-import Header from './Header'; 
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+import SignInForm from './components/SignInForm';
 
 function App() {
   return (
-    function App() {
-        return (
-          <div>
-            <Header />
-            <h1>Your Main Content</h1>
-          </div>
-        );
-      }
+    <div>
+      <h1>Welcome to Your Application</h1>
+      <SignInForm />
+    </div>
   );
 }
 
