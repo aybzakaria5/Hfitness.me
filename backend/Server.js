@@ -7,7 +7,7 @@ const clientRoute = require('./route/client.route');
 // const exerciceRoute = require('./route/exercice.route');
 // importing the noteRoute to give the path to the server
 const app = express();
-const port = 3500;
+const port = 3000;
 
 // allowing the requests from the origin (Cors)
 

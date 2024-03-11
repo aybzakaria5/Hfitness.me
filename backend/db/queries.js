@@ -1,8 +1,8 @@
 exports.queryListClient = {
     GET_ALL_CLIENTS: 'SELECT * FROM client',
     GET_CLIENT_BY_ID: 'SELECT * FROM client WHERE client_id = $1',
-    CREATE_CLIENT: 'INSERT INTO client (Username, email, password, Age, Height, Weight, Gender, FitnessGoal) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-    UPDATE_CLIENT: 'UPDATE client SET Username = $1, email = $2, password = $3, Age = $4, Height = $5, Weight = $6, Gender = $7, FitnessGoal = $8, updated_at = CURRENT_TIMESTAMP WHERE userId = $9',
+    CREATE_CLIENT: 'INSERT INTO client (Username, email, Age, Height, Weight, Gender, FitnessGoal) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+    UPDATE_CLIENT: 'UPDATE client SET Username = $1, email = $2, Age = $3, Height = $4, Weight = $5, Gender = $6, FitnessGoal = $7, updated_at = CURRENT_TIMESTAMP WHERE userId = $8',
     DELETE_CLIENT: 'DELETE FROM client WHERE client_id = $1',
 }
 exports.queryListDiet = {

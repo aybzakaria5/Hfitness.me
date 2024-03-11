@@ -4,11 +4,11 @@ CREATE SCHEMA IF NOT EXISTS HlthFitness
     AUTHORIZATION postgres;
 
 
-CREATE TABLE client.HlthFitness (
+CREATE TABLE HlthFitness.client (
     userId SERIAL PRIMARY KEY,
     Username VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
+    -- password TEXT NOT NULL,
     Age INTEGER,
     Height DECIMAL(5,2),
     Weight DECIMAL(5,2),
@@ -19,7 +19,7 @@ CREATE TABLE client.HlthFitness (
 );
 
 
-CREATE TABLE DietPlan.HlthFitness(
+CREATE TABLE HlthFitness.DietPlan(
     PlanId SERIAL PRIMARY KEY,
     clientId INTEGER REFERENCES client(userId) ON DELETE CASCADE,
     Title VARCHAR(100) NOT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE DietPlan.HlthFitness(
 );
 
 
-CREATE TABLE ExerciseProgram.HlthFitness (
+CREATE TABLE HlthFitness.ExericePrgm (
     ProgramId SERIAL PRIMARY KEY,
     userId INTEGER REFERENCES client(userId) ON DELETE CASCADE,
     Title VARCHAR(100) NOT NULL,
