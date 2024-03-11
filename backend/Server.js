@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const clientRoute = require('./route/client.route');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 // const dietRoute = require('./route/diet.route');
 // const exerciceRoute = require('./route/exercice.route');
 // importing the noteRoute to give the path to the server
@@ -39,6 +41,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(cors());
 // handeling the route for the noteRoute
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1/', clientRoute);
 // app.use('/api/v1/', dietRoute);
 // app.use('/api/v1/', exerciceRoute);
