@@ -1,11 +1,10 @@
 import React from 'react';
-import SignInForm from './components/SignInForm';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <div>
-      <h1>Welcome to Your Application</h1>
-      <SignInForm />
+    <div className="App">
+      <Footer/>
     </div>
   );
 }

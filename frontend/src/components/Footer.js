@@ -1,19 +1,27 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-
-function Footer() {
+import React from "react";
+import "./css/Footer.css";
+import Github from "../assets/github.png";
+import Instagram from "../assets/instagram.png";
+import LinkedIn from "../assets/linkedin.png";
+import Logo from '../assets/logo.png'
+const Footer = () => {
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Footer Content
-        </Typography>
-        <Button color="inherit">Link 1</Button>
-        <Button color="inherit">Link 2</Button>
-        {/* Add more buttons or links as needed */}
-      </Toolbar>
-    </AppBar>
+    <div className="Footer-container">
+      <hr />
+      <div className="footer">
+        <div className="social-links">
+          <img src={Github} alt="" />
+          <img src={Instagram} alt="" />
+          <img src={LinkedIn} alt="" />
+        </div>
+        <div className="logo-f">
+            <img src={Logo} alt="" />
+        </div>
+      </div>
+      <div className="blur blur-f"></div>
+      <div className="blur blur-f"></div>
+    </div>
   );
-}
+};
 
 export default Footer;

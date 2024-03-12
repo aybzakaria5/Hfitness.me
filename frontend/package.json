@@ -29,7 +29,8 @@
     "@mui/icons-material": "^5.15.11",
     "@mui/material": "^5.15.11",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^5.0.1",
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.7"
   },
   "browserslist": {
     "production": [
