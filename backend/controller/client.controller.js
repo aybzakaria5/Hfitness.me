@@ -17,14 +17,14 @@ exports.createClient = async (req, res) => {
 
     try {
         // const { Username, email, password, Age, Height, Weight, Gender, FitnessGoal } = req.body;
-        const Username = req.body.Username;
-        const email = req.body.email;
-        const userpassword = req.body.userpassword;
-        const Age = req.body.Age;
-        const Height = req.body.Height;
-        const Weight = req.body.Weight;
-        const Gender = req.body.Gender;
-        const FitnessGoal = req.body.FitnessGoal;
+        // const Username = req.body.Username;
+        // const email = req.body.email;
+        // const userpassword = req.body.userpassword;
+        // const Age = req.body.Age;
+        // const Height = req.body.Height;
+        // const Weight = req.body.Weight;
+        // const Gender = req.body.Gender;
+        // const FitnessGoal = req.body.FitnessGoal;
 
         console.log("the input for Age and height and weight and fitnessgoal and gender " + Age + " " + Height + " " + Weight + " " + FitnessGoal + " " + Gender + "" + userpassword);
 

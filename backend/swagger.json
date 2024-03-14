@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-      "title": "Hfitness API",
+      "title": "Hfitness.me API",
       "description": "API endpoints for managing clients in Hfitness application",
       "version": "1.0.0"
     },
