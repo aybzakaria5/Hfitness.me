@@ -1,5 +1,5 @@
 {
-  "name": "hfitness.me",
+  "name": "hfitness_backend",
   "version": "1.0.0",
   "description": "Health and Training Tracking",
   "main": "index.js",
@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/aybzakaria5/Hfitness.me/issues"
   },
-  "homepage": "https://github.com/aybzakaria5/Hfitness.me#readme"
+  "homepage": "https://github.com/aybzakaria5/Hfitness.me#readme",
+  "keywords": [
+    "api",
+    "health",
+    "coach"
+  ]
 }
