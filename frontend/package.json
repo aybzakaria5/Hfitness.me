@@ -1,36 +1,33 @@
 {
-  "name": "hfitness.me",
-  "version": "1.0.0",
-  "description": "Health and Training Tracking",
-  "main": "index.js",
+  "name": "fitclub",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emailjs/browser": "^3.6.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "emailjs": "^4.0.0",
+    "framer-motion": "^6.3.15",
+    "number-counter": "^1.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-onclickoutside": "^6.12.2",
+    "react-scripts": "^5.0.1",
+    "react-scroll": "^1.8.7",
+    "web-vitals": "^2.1.4"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aybzakaria5/Hfitness.me.git"
-  },
-  "author": "Ayoub Zakarya / Layla Abkari",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aybzakaria5/Hfitness.me/issues"
-  },
-  "homepage": "https://github.com/aybzakaria5/Hfitness.me#readme",
-  "keywords": [
-    "Health",
-    "and",
-    "Training",
-    "Tracking"
-  ],
-  "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.15.11",
-    "@mui/material": "^5.15.11",
-    "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
-    "@babel/plugin-proposal-private-property-in-object": "^7.14.7"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
