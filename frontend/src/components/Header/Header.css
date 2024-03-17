@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 280px;
+    height: 90px;
+}
+
+.header-menu{
+    list-style: none;
+    display: flex;
+    gap: 2em;
+    color: white;
+}
+
+.header-menu>li{
+    cursor: pointer;
+}
+.header-menu>li:hover{
+    color: #3A5A40;
+    cursor: pointer;
+}
