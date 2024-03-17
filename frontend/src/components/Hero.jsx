@@ -7,13 +7,13 @@ const Hero = () => {
     <div className="hero">
         <div className="left-h">
             <Header/>
-            {/*The best ad*/}
+            {/* The best ad */}
             <div className="the-best-ad">
                 <div className=""></div>
                 <span><strong>Hfitness</strong>,your favorite fitness platform</span>
             </div>
 
-            {/*Hero heading*/}
+            {/* Hero heading */}
             <div className='hero-text'>
                 <div>
                     <span className='stroke-text'>Shape </span>
@@ -28,7 +28,7 @@ const Hero = () => {
                     </span>
                 </div>
             </div>
-            {/*Figures*/}
+            {/* Figures */}
             <div className="figures">
                 <div>
                     <span>+ 210</span>
@@ -42,6 +42,11 @@ const Hero = () => {
                     <span>+ 80</span>
                     <span>FITNESS PROGRAMS</span>
                 </div>
+            </div>
+            {/* Hero Buttons */}
+            <div className="hero-buttons">
+                <buttons className="btn">Start with Us</buttons>
+                <buttons className="btn">Learn More</buttons>
             </div>
         </div>
         <div className="right-">right side</div>
