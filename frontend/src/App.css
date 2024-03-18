@@ -10,6 +10,7 @@
 }
 
 .App {
+  background-size: 85%;
   background-repeat: no-repeat;
   background-image: url(https://media.discordapp.net/attachments/1169043531441131520/1218714745079726080/IMG_20240317_001152-transformed.jpeg?ex=6608ab8d&is=65f6368d&hm=a564c279cf704d5b0ea8be35763437a2996e39802fc2a4dbbb3c27fa3696176c&=&format=webp&width=1440&height=616);
   mix-blend-mode: overlay;
@@ -30,13 +31,7 @@
   -webkit-text-stroke-color: white;
 }
 
-.hero-text>div:nth-of-type(3){
-  font-size: 1rem;
-  font-weight: 200;
-  text-transform: none;
-  letter-spacing: 1px;
-  width: 80%;
-}
+
 
 .btn{
   background-color: white;
