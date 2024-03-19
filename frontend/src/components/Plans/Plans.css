@@ -29,7 +29,7 @@
   }
 
   .plan>svg{
-    fill: var(--orange);
+    fill: rgb(255, 28, 28);
     width: 2rem;
     height: 2rem;
 }
