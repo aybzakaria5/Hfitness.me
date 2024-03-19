@@ -3,6 +3,7 @@ import './Hero.css';
 import Header from './Header/Header';
 import Heart from "../assets/heart.png";
 import hero_image from '../assets/hero_image.png';
+import Calories from '../assets/calories.png';
 
 const Hero = () => {
     return (
@@ -18,15 +19,15 @@ const Hero = () => {
                 {/* Hero heading */}
                 <div className='hero-text'>
                     <div>
-                        <span className='stroke-text'>Shape </span>
-                        <span>Your</span>
+                        <span className='stroke-text'>Sculpt </span>
+                        <span>Your</span> 
                     </div>
                     <div>
-                        <span>Ideal body</span>
+                        <span>Dream Physique</span>
                     </div>
                     <div>
                         <span>
-                            In here we will help you to shape and build your ideal body and live up your life to fullest
+                        At our center, we're focused on empowering you to achieve your ideal physique through a balanced approach that includes nourishing your body with wholesome, nutritious foods
                         </span>
                     </div>
                 </div>
@@ -60,7 +61,16 @@ const Hero = () => {
                 </div>
 
                 {/* Hero Images */}
-                <img src={hero_image} alt="" className="hero-image"/>        
+                <img src={hero_image} alt="" className="hero-image"/>
+
+                {/* Calories */}
+                <div className="calories">
+                    <img src={Calories} alt=''/>
+                    <div>
+                    <span>Calories burned</span>
+                    <span>370 kcal</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
