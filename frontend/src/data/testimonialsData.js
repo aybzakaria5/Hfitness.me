@@ -7,19 +7,19 @@ export const testimonialsData = [
     image: image1,
     review:
       "I made the right choice by choosing the Fitclub and by choosing the right plan and program I already achieved my ideal body!",
-    name: 'MATHEW HENDRICKSON',
+    name: 'AYOUB ZAKARYA',
     status : 'ENTREPRENEUR'
   },
   {
     image: image2,
-    review: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi ipsam, ab itaque nam perferendis impedit sint ',
-    name: 'JOHN KEVIN',
+    review: "I am thrilled with my decision to join Hfitness and select the perfect plan, I already achieved my dream body!",
+    name: 'LAYLA ABKARI',
     status: 'COACH'
   },
   {
     image : image3,
-    review:' Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima aspernatur quod voluptatem',
-    name: 'FRANKLIN',
+    review:"By nourishing my body with wholesome foods, I have not only achieved my ideal physique but also enhanced my overall well-being",
+    name: 'ALAMI ADAM',
     status: "CUSTOMER"
   }
 ];
