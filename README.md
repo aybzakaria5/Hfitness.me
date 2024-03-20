@@ -71,12 +71,19 @@ HFITNESS offers a seamless experience for both coaches and clients:
 
 - Coaches can:
   - Create personalized diet plans and exercise routines.
+  - ![LOgo image](Hft1.png)
+
   - Track clients' health progress.
+   - ![LOgo image](hft2.png)
+
   - Communicate with clients through the platform.
 - Clients can:
   - Access their personalized diet plans and exercise routines.
+   - ![LOgo image](hft3.png)
+
   - Track their health progress over time.
   - Communicate with their coach.
+    - ![LOgo image](contact.png)
 
 ## Contributing
 We welcome contributions from the community to improve HFITNESS. To contribute:
