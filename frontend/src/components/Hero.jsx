@@ -7,6 +7,7 @@ import Calories from '../assets/calories.png';
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
 
+
 const Hero = () => {
     const transition = { duration: 3, type: "spring" };
     const mobile = window.innerWidth<=768? true : false;
@@ -68,7 +69,8 @@ const Hero = () => {
                 </div>
             </div>
             <div className="right-h">
-                <button className="btn">Sign In</button>
+               
+                <button className="btn" >Sign In</button>
                 <motion.div
                     initial={{ right: "-1rem" }}
                     whileInView={{ right: "4rem" }}
