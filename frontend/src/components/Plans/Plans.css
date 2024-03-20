@@ -77,3 +77,15 @@
     top: 10rem;
     right: 0rem;
 }
+@media screen and (max-width: 768px) {
+    .plans-container>.programs-header{
+        font-size: x-large;
+    }
+    .plans{
+        flex-direction: column;
+    }
+    .plans>:nth-child(2)
+    {
+        transform: none;
+    }
+}

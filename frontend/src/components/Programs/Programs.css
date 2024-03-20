@@ -57,3 +57,17 @@
     background-color: #74C69D;
 }
 
+@media screen and (max-width: 767px) {
+  .programs-header{
+    flex-direction: column;
+    gap: 1rem;
+    font-size: x-large;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .prgoram-categories{
+    flex-direction: column;
+  }
+}
+
