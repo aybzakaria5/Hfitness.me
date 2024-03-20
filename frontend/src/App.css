@@ -47,3 +47,12 @@
 btn:hover{
   cursor: pointer;
 }
+
+.blur {
+  background: rgba(166, 223, 163, 0.69);
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(212px);
+  z-index: -9;
+  filter: blur(150px);
+}

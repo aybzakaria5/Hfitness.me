@@ -6,6 +6,7 @@ import hero_image from '../assets/hero_image.png';
 import Calories from '../assets/calories.png';
 
 const Hero = () => {
+    <div className="blur hero-blur"></div>
     return (
         <div className="hero">
             <div className="left-h">
