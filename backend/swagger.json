@@ -1,162 +1,267 @@
 {
-    "openapi": "3.0.0",
-    "info": {
-      "title": "Hfitness.me API",
-      "description": "API endpoints for managing clients in Hfitness application",
-      "version": "1.0.0"
-    },
-    "servers": [
-      {
-        "url": "http://localhost:3000"
-      }
-    ],
-    "paths": {
-      "/api/v1/clients": {
-        "get": {
-          "summary": "Get all clients",
-          "responses": {
-            "200": {
-              "description": "Successful operation",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Client"
-                    }
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Hfitness.me API",
+    "description": "API endpoints for managing clients in Hfitness application",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "paths": {
+    "/api/v1/clients": {
+      "get": {
+        "summary": "Get all clients",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Client"
                   }
                 }
               }
-            },
-            "500": {
-              "description": "Failed to get all the clients",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Error"
-                  }
+            }
+          },
+          "500": {
+            "description": "Failed to get all the clients",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/client/{id}": {
+      "get": {
+        "summary": "Get a client by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Client ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Client not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to get the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
           }
         }
       },
-      "/api/v1//client": {
-        "post": {
-          "summary": "Create a new client",
-          "requestBody": {
+      "put": {
+        "summary": "Update a client",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Client ID",
             "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Client updated successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Client not found",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ClientInput"
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
           },
-          "responses": {
-            "201": {
-              "description": "Client created successfully"
-            },
-            "400": {
-              "description": "Invalid input"
-            },
-            "500": {
-              "description": "Failed to create the client",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Error"
-                  }
+          "500": {
+            "description": "Failed to update the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
           }
         }
-      }
-    },
-    "components": {
-      "schemas": {
-        "Client": {
-          "type": "object",
-          "properties": {
-            "userId": {
+      },
+      "delete": {
+        "summary": "Delete a client",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Client ID",
+            "required": true,
+            "schema": {
               "type": "integer"
-            },
-            "Username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "Age": {
-              "type": "integer"
-            },
-            "Height": {
-              "type": "number",
-              "format": "decimal"
-            },
-            "Weight": {
-              "type": "number",
-              "format": "decimal"
-            },
-            "Gender": {
-              "type": "string"
-            },
-            "FitnessGoal": {
-              "type": "string"
-            },
-            "created_at": {
-              "type": "string",
-              "format": "date-time"
-            },
-            "updated_at": {
-              "type": "string",
-              "format": "date-time"
             }
           }
-        },
-        "ClientInput": {
-          "type": "object",
-          "properties": {
-            "Username": {
-              "type": "string"
-            },
-            "email": {
-              "type": "string"
-            },
-            "userpassword": {
-              "type": "string"
-            },
-            "Age": {
-              "type": "integer"
-            },
-            "Height": {
-              "type": "number",
-              "format": "decimal"
-            },
-            "Weight": {
-              "type": "number",
-              "format": "decimal"
-            },
-            "Gender": {
-              "type": "string"
-            },
-            "FitnessGoal": {
-              "type": "string"
+        ],
+        "responses": {
+          "200": {
+            "description": "Client deleted successfully"
+          },
+          "404": {
+            "description": "Client not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           },
-          "required": ["Username", "email", "userpassword"]
-        },
-        "Error": {
-          "type": "object",
-          "properties": {
-            "error": {
-              "type": "string"
+          "500": {
+            "description": "Failed to delete the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
             }
           }
         }
       }
     }
+  },
+  "components": {
+    "schemas": {
+      "Client": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer"
+          },
+          "Username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "Age": {
+            "type": "integer"
+          },
+          "Height": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "Weight": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "Gender": {
+            "type": "string"
+          },
+          "FitnessGoal": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ClientInput": {
+        "type": "object",
+        "properties": {
+          "Username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "userpassword": {
+            "type": "string"
+          },
+          "Age": {
+            "type": "integer"
+          },
+          "Height": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "Weight": {
+            "type": "number",
+            "format": "decimal"
+          },
+          "Gender": {
+            "type": "string"
+          },
+          "FitnessGoal": {
+            "type": "string"
+          }
+        },
+        "required": ["Username", "email", "userpassword"]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string"
+          }
+        }
+      }
+    }
   }
-  
+}
