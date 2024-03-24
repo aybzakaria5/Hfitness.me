@@ -95,3 +95,14 @@ exports.updateClient = async (req, res) => {
         return res.status(500).send({ error: "Failed to update the client" });
     }
 }
+exports.deleteClient = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const deleteClientQuery = queries.queryListClient.DELETE_CLIENT;
+        await dbConnection.dbQuery(deleteClientQuery, [id]);
+        return res.status(200).send({ message: "Client deleted successfully" });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).send({ error: "Failed to delete the client" });
+    }
+}

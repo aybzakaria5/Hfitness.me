@@ -2,7 +2,7 @@ exports.queryListClient = {
     GET_ALL_CLIENTS: 'SELECT * FROM "Hfitness".client',
     GET_CLIENT_BY_ID: 'SELECT * FROM "Hfitness".client WHERE userId = $1',
     UPDATE_CLIENT : 'UPDATE "Hfitness".client SET Username = $1, email = $2, userpassword = $3, Age = $4, Height = $5, Weight = $6, Gender = $7, FitnessGoal = $8, updated_at = CURRENT_TIMESTAMP WHERE userId= $9',
-    DELETE_CLIENT: 'DELETE FROM client WHERE client_id = $1',
+    DELETE_CLIENT: 'DELETE FROM "Hfitness".client WHERE userId = $1',
 }
 exports.queryListDiet = {
     GET_ALL_DIETS: 'SELECT * FROM diet',
