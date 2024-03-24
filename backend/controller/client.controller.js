@@ -16,7 +16,7 @@ exports.getAllClients = async (req, res) => {
 exports.createClient = async (req, res) => {
 
     try {
-        // const { Username, email, password, Age, Height, Weight, Gender, FitnessGoal } = req.body;
+        const { Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal } = req.body;
         // const Username = req.body.Username;
         // const email = req.body.email;
         // const userpassword = req.body.userpassword;
@@ -36,5 +36,34 @@ exports.createClient = async (req, res) => {
         console.error(error);
         return res.status(500).send({ error: "Failed to create the client" });
         console.log("the error for usename " + Username);
+    }
+}
+exports.getClientById = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const getClientQuery = queries.queryListClient.GET_CLIENT_BY_ID;
+        const result = await dbConnection.dbQuery(getClientQuery, [id]);
+        return res.status(200).send(JSON.stringify(result.rows));
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(500).send({ error: "Failed to get the client" });
+    }
+}
+
+exports.updateClient = async (req, res) => {
+    try {
+        const id = req.params.id;
+        const { Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal } = req.body;
+
+        const vlues = [Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal];
+        const updateClientQuery = queries.queryListClient.UPDATE_CLIENT;
+        const reslut = await dbConnection.dbQuery(updateClientQuery, vlues);
+        console.log(`the client updated successfully ${reslut}`);
+        return res.status(200).send({ message: "Client updated successfully" });
+    }
+    catch (error) {
+        console.error(error);
+        return res.status(500).send({ error: "Failed to update the client" });
     }
 }
