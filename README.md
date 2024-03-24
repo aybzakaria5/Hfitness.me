@@ -65,6 +65,10 @@ To get started with HFITNESS, follow these steps:
     ```
 
 6. Access HFITNESS in your browser at `http://localhost:3000`.
+7. navigate the API at `http://localhost:3000\api-docs` , here's the UI swagger for it :
+  - ![API image](swagger1.png)
+  - ![API image](swagger2.png)
+  - ![API image](swagger3.png)
 
 ## Usage
 HFITNESS offers a seamless experience for both coaches and clients:
