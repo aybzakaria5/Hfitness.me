@@ -54,15 +54,43 @@ exports.getClientById = async (req, res) => {
 exports.updateClient = async (req, res) => {
     try {
         const id = req.params.id;
-        const { Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal } = req.body;
+        const { Username, email, userpassword, Age, Height, Weight, Gender, Fitnessgoal } = req.body;
 
-        const vlues = [Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal, id];
+        // Fetch the existing client data
+        const getClientQuery = queries.queryListClient.GET_CLIENT_BY_ID;
+        const clientResult = await dbConnection.dbQuery(getClientQuery, [id]);
+        const existingClientData = clientResult.rows[0];
+
+        // Update only the provided fields, if available
+        const updatedClientData = {
+            Username: Username || existingClientData.username,
+            email: email || existingClientData.email,
+            userpassword: userpassword || existingClientData.userpassword,
+            Age: Age || existingClientData.age,
+            Height: Height || existingClientData.height,
+            Weight: Weight || existingClientData.weight,
+            Gender: Gender || existingClientData.gender,
+            Fitnessgoal: Fitnessgoal || existingClientData.fitnessgoal
+        };
+
+        // Execute the update query
         const updateClientQuery = queries.queryListClient.UPDATE_CLIENT;
-        const reslut = await dbConnection.dbQuery(updateClientQuery, vlues);
-        console.log(`the client updated successfully ${reslut}`);
+        const values = [
+            updatedClientData.Username,
+            updatedClientData.email,
+            updatedClientData.userpassword,
+            updatedClientData.Age,
+            updatedClientData.Height,
+            updatedClientData.Weight,
+            updatedClientData.Gender,
+            updatedClientData.Fitnessgoal,
+            id
+        ];
+
+        await dbConnection.dbQuery(updateClientQuery, values);
+
         return res.status(200).send({ message: "Client updated successfully" });
-    }
-    catch (error) {
+    } catch (error) {
         console.error(error);
         return res.status(500).send({ error: "Failed to update the client" });
     }

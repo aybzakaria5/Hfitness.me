@@ -211,3 +211,10 @@
 [2024-03-24T12:42:56.209Z] ::ffff:127.0.0.1 GET 200:3000 /api-docs/swagger-ui-standalone-preset.js
 [2024-03-24T12:42:56.210Z] ::ffff:127.0.0.1 GET 200:3000 /api-docs/swagger-ui-init.js
 [2024-03-24T12:42:56.358Z] ::ffff:127.0.0.1 GET 200:3000 /api-docs/favicon-16x16.png
+[2024-03-24T13:03:11.267Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:04:22.747Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:04:33.578Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:05:29.967Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:09:50.901Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:11:22.743Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
+[2024-03-24T13:11:54.138Z] ::ffff:127.0.0.1 PUT 200:3000 /api/v1/client/3
