@@ -15,7 +15,7 @@
 .right-h{
     flex: 1;
     position: relative;
-    background-color: #D8F3DC;
+    background: var(--planCard);
 }
 
 .the-best-ad{
