@@ -56,7 +56,7 @@ exports.updateClient = async (req, res) => {
         const id = req.params.id;
         const { Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal } = req.body;
 
-        const vlues = [Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal];
+        const vlues = [Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal, id];
         const updateClientQuery = queries.queryListClient.UPDATE_CLIENT;
         const reslut = await dbConnection.dbQuery(updateClientQuery, vlues);
         console.log(`the client updated successfully ${reslut}`);
