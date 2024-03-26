@@ -9,6 +9,10 @@
     {
       "url": "http://localhost:3000",
       "description": "Local development server"
+    },
+    {
+      "url": "https://hfitness.me/api-Hfitness",
+      "description": "Production server"
     }
   ],
   "tags": [
