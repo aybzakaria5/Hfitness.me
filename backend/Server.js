@@ -34,7 +34,7 @@ const frontendPath = path.join(__dirname, '..', 'frontend', 'build');
 app.use(express.static(frontendPath));
 
 // Define API routes
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-Hfitness', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1/', clientRoute);
 
 // Define route for root path
