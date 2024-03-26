@@ -6,14 +6,14 @@ import hero_image from '../assets/hero_image.png';
 import Calories from '../assets/calories.png';
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
-
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const transition = { duration: 3, type: "spring" };
     const mobile = window.innerWidth<=768? true : false;
-    <div className="blur hero-blur"></div>
     return (
         <div className="hero" id="home">
+            <div className="blur hero-blur"></div>
             <div className="left-h">
                 <Header/>
                 {/* The best ad */}
@@ -64,13 +64,15 @@ const Hero = () => {
                 </div>
                 {/* Hero Buttons */}
                 <div className="hero-buttons">
-                    <button className="btn">Start with Us</button>
+                    <button className="btn" >Start with Us</button>
                     <button className="btn">Learn More</button>
                 </div>
             </div>
             <div className="right-h">
-               
-                <button className="btn" >Sign In</button>
+                <Link to="/sign-in">
+                    <button className="btn">Sign In</button>
+                </Link>
+
                 <motion.div
                     initial={{ right: "-1rem" }}
                     whileInView={{ right: "4rem" }}
