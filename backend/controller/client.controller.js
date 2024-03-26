@@ -1,5 +1,7 @@
 const queries = require('../db/queries');
 const dbConnection = require('../db/connection');
+const APIError = require('../error/api.error');
+const errorStatus = require('../error/error.status');
 
 exports.getAllClients = async (req, res) => {
     try {
@@ -41,6 +43,9 @@ exports.createClient = async (req, res) => {
 exports.getClientById = async (req, res) => {
     try {
         const id = req.params.id;
+        if (isNaN(id))
+            throw new APIError("Invalid userId , is not a number", 
+        errorStatus.INTERNAL_SERVER_ERROR, "Invalid userId , is not a number", true)
         const getClientQuery = queries.queryListClient.GET_CLIENT_BY_ID;
         const result = await dbConnection.dbQuery(getClientQuery, [id]);
         return res.status(200).send(JSON.stringify(result.rows));

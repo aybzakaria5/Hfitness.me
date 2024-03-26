@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
+const path = require('path');
 const clientRoute = require('./route/client.route');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
@@ -34,9 +35,11 @@ app.use((req, res, next) => {
   next(); // Call the next middleware in the stack
 });
 
+const frontendPath = path.join(__dirname, '..', 'frontend');
+app.use(express.static(frontendPath));
 app.get('/', (req, res) => {
     // rendering the landing page later
-  res.send("Server started .......................");
+    res.sendFile(path.join(frontendPath,   'index.html'));
 });
 app.use(express.json());
 app.use(cors());

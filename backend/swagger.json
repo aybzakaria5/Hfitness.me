@@ -7,7 +7,14 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000"
+      "url": "http://localhost:3000",
+      "description": "Local development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "clients",
+      "description": "Operations related to clients"
     }
   ],
   "paths": {
@@ -41,9 +48,44 @@
         }
       }
     },
+    "/api/v1/client": {
+      "post": {
+        "summary": "Create a new client",
+        "tags": ["clients"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClientInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Client created successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Failed to create the client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },    
     "/api/v1/client/{id}": {
       "get": {
         "summary": "Get a client by ID",
+        "tags": ["clients"],
         "parameters": [
           {
             "name": "id",
@@ -90,6 +132,7 @@
       },
       "put": {
         "summary": "Update a client",
+        "tags": ["clients"],
         "parameters": [
           {
             "name": "id",
@@ -142,6 +185,7 @@
       },
       "delete": {
         "summary": "Delete a client",
+        "tags": ["clients"],
         "parameters": [
           {
             "name": "id",
@@ -187,78 +231,97 @@
         "type": "object",
         "properties": {
           "userId": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The unique identifier for the user"
           },
           "Username": {
-            "type": "string"
+            "type": "string",
+            "description": "The username of the client"
           },
           "email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address of the client"
           },
           "Age": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The age of the client"
           },
           "Height": {
             "type": "number",
-            "format": "decimal"
+            "format": "decimal",
+            "description": "The height of the client in meters"
           },
           "Weight": {
             "type": "number",
-            "format": "decimal"
+            "format": "decimal",
+            "description": "The weight of the client in kilograms"
           },
           "Gender": {
-            "type": "string"
+            "type": "string",
+            "description": "The gender of the client"
           },
           "FitnessGoal": {
-            "type": "string"
+            "type": "string",
+            "description": "The fitness goal of the client"
           },
           "created_at": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "The date and time when the client was created"
           },
           "updated_at": {
             "type": "string",
-            "format": "date-time"
+            "format": "date-time",
+            "description": "The date and time when the client was last updated"
           }
         }
       },
       "ClientInput": {
         "type": "object",
         "properties": {
-          "Username": {
-            "type": "string"
+          "Username":
+          {
+            "type": "string",
+            "description": "The username of the client"
           },
           "email": {
-            "type": "string"
+            "type": "string",
+            "description": "The email address of the client"
           },
           "userpassword": {
-            "type": "string"
+            "type": "string",
+            "description": "The password of the client"
           },
           "Age": {
-            "type": "integer"
+            "type": "integer",
+            "description": "The age of the client"
           },
           "Height": {
             "type": "number",
-            "format": "decimal"
+            "format": "decimal",
+            "description": "The height of the client in meters"
           },
           "Weight": {
             "type": "number",
-            "format": "decimal"
-          },
-          "Gender": {
-            "type": "string"
+            "format": "decimal",
+            "description": "The weight of the client in kilograms"
           },
           "FitnessGoal": {
-            "type": "string"
+            "type": "string",
+            "description": "The fitness goal of the client"
+          },
+          "Gender": {
+            "type": "string",
+            "description": "The gender of the client"
           }
-        },
-        "required": ["Username", "email", "userpassword"]
+        }
       },
       "Error": {
         "type": "object",
         "properties": {
-          "error": {
-            "type": "string"
+          "message": {
+            "type": "string",
+            "description": "Error message"
           }
         }
       }
