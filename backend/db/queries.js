@@ -5,7 +5,7 @@ exports.queryListClient = {
     UPDATE_CLIENT: 'UPDATE client SET Username = $1, email = $2, Age = $3, Height = $4, Weight = $5, Gender = $6, FitnessGoal = $7, updated_at = CURRENT_TIMESTAMP WHERE userId = $8',
     DELETE_CLIENT: 'DELETE FROM client WHERE client_id = $1',
 }
-expostts.queryListDiet = {
+exports.queryListDiet = {
     GET_ALL_DIETS: 'SELECT * FROM diet',
     GET_DIET_BY_ID: 'SELECT * FROM diet WHERE diet_id = $1',
     CREATE_DIET: 'INSERT INTO diet (DietName, DietType, DietDescription) VALUES ($1, $2, $3)',
