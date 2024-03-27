@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 .wrapper {
     width: 420px;
     background: transparent;
@@ -10,15 +12,15 @@
 }
 
 .wrapper h1 {
-    font-size: 36px;
+    font-size: 25px;
     text-align: center;
 }
 
 .wrapper .input-box {
     position: relative;
-    width: 100%;
+    width: 85%;
     height: 50px;
-    margin: 30px 0;
+    margin: 30px 0 60px;
 }
 
 .input-box input {
@@ -30,17 +32,17 @@
     border-radius: 40px;
     font-size: 16px;
     color: #fff;
-    padding: 20px 45px 20px 20px;
+    padding: 20px 45px 15px 15px;
 }
 
 .input-box input::placeholder {
-    color: #fff;
+    color: white;
 }
 
 .input-box .icon {
     position: absolute;
     right: 20px;
-    top: 50%;
+    top: 80%;
     transform: translateY(-50%);
     font-size:  16px;
 }
@@ -49,8 +51,14 @@
     display: flex;
     justify-content: space-between;
     font-size: 14.5px;
-    margin: -15px 0 15px;
+    margin: -10px 0 15px;
 }
+
+.remember-forgot {
+    display: flex; /* Use flexbox */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+  }
 
 .remember-forgot label input {
     accent-color: #fff;
@@ -60,10 +68,13 @@
 .remember-forgot a {
     color: #fff;
     text-decoration: none;
+    margin-left: auto; /* Push the link to the right */
+
 }
 
 .remember-forgot a:hover {
     text-decoration: underline;
+    font-weight: bold;
 }
 
 .wrapper button{
@@ -86,6 +97,11 @@
     margin: 20px 0 15px;
 }
 
+.wrapper .btn:hover {
+    color: aquamarine;
+    background-color: black;
+}
+
 .register-link p a {
     color: #fff;
     text-decoration: none;
@@ -94,21 +110,4 @@
 
 .register-link p a:hover {
     text-decoration: underline;
-}
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-/* Define CSS for SignInForm */
-.body {
-  font-family: 'Poppins', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: url(../../assets/signin.jpg) no-repeat;
-  background-size: cover;
-  background-position: center;
 }

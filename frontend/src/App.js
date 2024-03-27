@@ -25,7 +25,7 @@ function App() {
               <Footer />
             </>
           } />
-          <Route path="/sign-in" element={<SignInForm />} />
+          <Route path="/sign-in"  className='sign-in' element={<SignInForm />} />
         </Routes>
       </BrowserRouter>
     </div>

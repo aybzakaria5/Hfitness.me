@@ -14,13 +14,16 @@
 .App {
   background-size: 85%;
   background-repeat: no-repeat;
-  background-image: url(https://media.discordapp.net/attachments/1169043531441131520/1218714745079726080/IMG_20240317_001152-transformed.jpeg?ex=6608ab8d&is=65f6368d&hm=a564c279cf704d5b0ea8be35763437a2996e39802fc2a4dbbb3c27fa3696176c&=&format=webp&width=1440&height=616);
   mix-blend-mode: overlay;
   background-color: var(--appColor);
+  background-image: url(https://media.discordapp.net/attachments/1169043531441131520/1218714745079726080/IMG_20240317_001152-transformed.jpeg?ex=6608ab8d&is=65f6368d&hm=a564c279cf704d5b0ea8be35763437a2996e39802fc2a4dbbb3c27fa3696176c&=&format=webp&width=1440&height=616);
   display: flex;
   flex-direction: column;
   gap: 6rem;
   overflow: hidden;
+}
+
+.sign-in {
 }
 ::-webkit-scrollbar{
   display: none;
@@ -60,9 +63,7 @@ btn:hover{
 }
 
 
-/*
-.body{
-
+.body-sf {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -70,9 +71,7 @@ btn:hover{
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url(./assets/signin.jpg) no-repeat;
+  background: url('./assets/signin.jpg') no-repeat;
   background-size: cover;
   background-position: center;
 }
-*/
-
