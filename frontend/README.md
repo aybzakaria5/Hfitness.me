@@ -1,1 +1,0 @@
-=> here we gonna list the technologies we have worked with in the frontend
