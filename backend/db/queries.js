@@ -1,9 +1,8 @@
 exports.queryListClient = {
     GET_ALL_CLIENTS: 'SELECT * FROM "Hfitness".client',
-    GET_CLIENT_BY_ID: 'SELECT * FROM client WHERE client_id = $1',
-    CREATE_CLIENT: 'INSERT INTO "Hfitness".client (Username, email, userpassword, Age, Height, Weight, Gender, FitnessGoal) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)',
-    UPDATE_CLIENT: 'UPDATE client SET Username = $1, email = $2, Age = $3, Height = $4, Weight = $5, Gender = $6, FitnessGoal = $7, updated_at = CURRENT_TIMESTAMP WHERE userId = $8',
-    DELETE_CLIENT: 'DELETE FROM client WHERE client_id = $1',
+    GET_CLIENT_BY_ID: 'SELECT * FROM "Hfitness".client WHERE userId = $1',
+    UPDATE_CLIENT : 'UPDATE "Hfitness".client SET Username = $1, email = $2, userpassword = $3, Age = $4, Height = $5, Weight = $6, Gender = $7, FitnessGoal = $8, updated_at = CURRENT_TIMESTAMP WHERE userId= $9',
+    DELETE_CLIENT: 'DELETE FROM "Hfitness".client WHERE userId = $1',
 }
 exports.queryListDiet = {
     GET_ALL_DIETS: 'SELECT * FROM diet',
