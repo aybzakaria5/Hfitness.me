@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path'); // Import path module to work with file paths
 
 const clientRoute = require('./route/client.route');
+const dietRoute = require('./route/diet.route');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
 
@@ -36,6 +37,7 @@ app.use(express.static(frontendPath));
 // Define API routes
 app.use('/api-Hfitness', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/v1/', clientRoute);
+app.use('/api/v1/', dietRoute);
 
 // Define route for root path
 app.get('/', (req, res) => {

@@ -19,12 +19,21 @@
     {
       "name": "clients",
       "description": "Operations related to clients"
+    },
+    {
+      "name": "dietplans",
+      "description": "Operations related to diet plans"
+    },
+    {
+      "name": "ExerciceProgrammes",
+      "description": "Operations related to exercice programmes"
     }
   ],
   "paths": {
     "/api/v1/clients": {
       "get": {
         "summary": "Get all clients",
+        "tags": ["clients"],
         "responses": {
           "200": {
             "description": "Successful operation",
@@ -227,6 +236,384 @@
           }
         }
       }
+    },
+    "/api/v1/dietplans": {
+      "get": {
+        "summary": "Get all diet plans",
+        "tags": ["dietplans"],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DietPlan"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to get all diet plans",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/dietplan/{id}": {
+      "get": {
+        "summary": "Get a diet plan by ID",
+        "tags": ["dietplans"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Diet plan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DietPlan"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Diet plan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to get the diet plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update a diet plan",
+        "tags": ["dietplans"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Diet plan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DietPlanInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Diet plan updated successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Diet plan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to update the diet plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a diet plan",
+        "tags": ["dietplans"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Diet plan ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Diet plan deleted successfully"
+          },
+          "404": {
+            "description": "Diet plan not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to delete the diet plan",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ExerciceProgrammes": {
+      "get": {
+        "summary": "Get all exercise programs",
+        "tags": ["ExerciceProgrammes"],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ExerciseProgram"
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to get all exercise programs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new exercise program",
+        "tags": ["ExerciceProgrammes"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExerciseProgramInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Exercise program created successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Failed to create the exercise program",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/exerciseprogramme/{id}": {
+      "get": {
+        "summary": "Get an exercise program by ID",
+        "tags": ["ExerciceProgrammes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Exercise program ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExerciseProgram"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Exercise program not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to get the exercise program",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "Update an exercise program",
+        "tags": ["ExerciceProgrammes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Exercise program ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ExerciseProgramInput"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Exercise program updated successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Exercise program not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to update the exercise program",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete an exercise program",
+        "tags": ["ExerciceProgrammes"],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Exercise program ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Exercise program deleted successfully"
+          },
+          "404": {
+            "description": "Exercise program not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Failed to delete the exercise program",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -317,6 +704,123 @@
           "Gender": {
             "type": "string",
             "description": "The gender of the client"
+          }
+        }
+      },
+      "ExerciseProgram": {
+        "type": "object",
+        "properties": {
+          "ProgramId": {
+            "type": "integer",
+            "description": "The unique identifier for the exercise program"
+          },
+          "userId": {
+            "type": "integer",
+            "description": "The unique identifier for the user associated with the exercise program"
+          },
+          "Title": {
+            "type": "string",
+            "description": "The title of the exercise program"
+          },
+          "Duration": {
+            "type": "string",
+            "description": "The duration of the exercise program"
+          },
+          "Price": {
+            "type": "number",
+            "format": "decimal",
+            "description": "The price of the exercise program"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the exercise program was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the exercise program was last updated"
+          }
+        }
+      },
+      "ExerciseProgramInput": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "integer",
+            "description": "The unique identifier for the user associated with the exercise program"
+          },
+          "Title": {
+            "type": "string",
+            "description": "The title of the exercise program"
+          },
+          "Duration": {
+            "type": "string",
+            "description": "The duration of the exercise program"
+          },
+          "Price": {
+            "type": "number",
+            "format": "decimal",
+            "description": "The price of the exercise program"
+          }
+        },
+        "required": ["userId", "Title", "Duration", "Price"]
+      },
+      "DietPlan": {
+        "type": "object",
+        "properties": {
+          "PlanId": {
+            "type": "integer",
+            "description": "The unique identifier for the diet plan"
+          },
+          "clientId": {
+            "type": "integer",
+            "description": "The unique identifier for the client associated with the diet plan"
+          },
+          "Title": {
+            "type": "string",
+            "description": "The title of the diet plan"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description of the diet plan"
+          },
+          "Price": {
+            "type": "number",
+            "format": "decimal",
+            "description": "The price of the diet plan"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the diet plan was created"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The date and time when the diet plan was last updated"
+          }
+        }
+      },
+      "DietPlanInput": {
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "integer",
+            "description": "The unique identifier for the client associated with the diet plan"
+          },
+          "Title": {
+            "type": "string",
+            "description": "The title of the diet plan"
+          },
+          "Description": {
+            "type": "string",
+            "description": "The description of the diet plan"
+          },
+          "Price": {
+            "type": "number",
+            "format": "decimal",
+            "description": "The price of the diet plan"
           }
         }
       },
