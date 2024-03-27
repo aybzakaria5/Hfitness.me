@@ -6,7 +6,6 @@ import hero_image from '../assets/hero_image.png';
 import Calories from '../assets/calories.png';
 import { motion } from "framer-motion";
 import NumberCounter from "number-counter";
-import { Link } from 'react-router-dom';
 
 const Hero = () => {
     const transition = { duration: 3, type: "spring" };
@@ -69,9 +68,8 @@ const Hero = () => {
                 </div>
             </div>
             <div className="right-h">
-                <Link to="/sign-in">
-                    <button className="btn">Sign In</button>
-                </Link>
+                    <a href='/sign-in' target="_blank" className="btn">Sign In</a>
+                
 
                 <motion.div
                     initial={{ right: "-1rem" }}
