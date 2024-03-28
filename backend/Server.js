@@ -40,7 +40,7 @@ app.use('/api/v1/', clientRoute);
 app.use('/api/v1/', dietRoute);
 
 // Define route for root path
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   // Send the landing page from the frontend build directory
   res.sendFile(path.join(frontendPath, 'index.html'));
 });
