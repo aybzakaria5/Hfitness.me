@@ -1,0 +1,73 @@
+/* make variables */
+:root {
+  --lightgray: #D9D9D9;
+  --gray: #9c9c9c;
+  --orange: #f48915;
+  --darkGrey: #464D53;
+  --caloryCard: #656565;
+  --planCard: linear-gradient(210.41deg, #4fff3e 1.14%, #1a593f 100.75%);
+  --appColor:  #3c3f45;
+}
+
+
+
+.App {
+  background-size: 85%;
+  background-repeat: no-repeat;
+  background-image: url(https://media.discordapp.net/attachments/1169043531441131520/1218714745079726080/IMG_20240317_001152-transformed.jpeg?ex=6608ab8d&is=65f6368d&hm=a564c279cf704d5b0ea8be35763437a2996e39802fc2a4dbbb3c27fa3696176c&=&format=webp&width=1440&height=616);
+  mix-blend-mode: overlay;
+  background-color: var(--appColor);
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  overflow: hidden;
+}
+
+.App.sign-in {
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url('./assets/signin.jpg') no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+
+.stroke-text{
+  color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+
+
+.btn{
+  background-color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+  border: 4px solid transparent;
+  transition: 300ms all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+btn:hover{
+  cursor: pointer;
+}
+
+.blur {
+  background: rgba(166, 223, 163, 0.69);
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(212px);
+  z-index: -9;
+  filter: blur(150px);
+}
